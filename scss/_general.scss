@@ -40,10 +40,40 @@ a {
 .cat-wrapper,
 .slider,
 .cat-slider,
-.slider-item {
+.slider-item,
+.seller-wrapper,
+.seller-img-wrapper,
+.promo,
+.data,
+.rev-wrapper-title,
+.rev-slider,
+.rev-container,
+.rev-wrapper,
+.author,
+.insta-container,
+.insta-photo,
+.bullit {
   display: flex;
 }
 h2 {
   font-size: 40px;
   font-weight: 400;
+}
+
+.slider {
+  column-gap: 20px;
+
+  & svg {
+    cursor: pointer;
+    transition: ease 0.3s;
+
+    &:hover rect {
+      fill: #000;
+      transition: ease 0.3s;
+    }
+    &:hover path {
+      stroke: #fff;
+      transition: ease 0.3s;
+    }
+  }
 }
