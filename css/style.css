@@ -8,6 +8,8 @@ html {
 }
 
 body {
+  font-family: "Jost";
+  font-size: 16px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -15,11 +17,228 @@ body {
 }
 
 .container {
+  max-width: 1440px;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   flex-grow: 1;
 }
 
 footer {
   flex-grow: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.header,
+.main,
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation,
+.header-icon,
+.header-icon-wrapper,
+.cat-wrapper,
+.slider,
+.cat-slider,
+.slider-item {
+  display: flex;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.header {
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 28px 100px;
+  align-items: center;
+}
+
+.navigation {
+  column-gap: 14px;
+}
+
+.navigation li {
+  list-style-type: none;
+  transition: ease 0.3s;
+}
+.navigation li a {
+  padding: 7px 13px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 10px;
+  transition: ease 0.3s;
+  box-sizing: border-box;
+}
+.navigation li:hover a {
+  background-color: #000;
+  color: #fff;
+  transition: ease 0.3s;
+}
+.navigation li svg path {
+  stroke: #fff;
+  transition: ease 0.3s;
+}
+
+.header-icon-wrapper {
+  align-items: center;
+  margin-right: 30px;
+  column-gap: 24px;
+}
+.header-icon-wrapper a {
+  height: 35px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+  transition: ease 0.3s;
+}
+.header-icon-wrapper a:hover {
+  background-color: #000;
+  transition: ease 0.3s;
+}
+.header-icon-wrapper a:hover path {
+  fill: #fff;
+}
+.header-icon-wrapper a:hover .img-favorite path, .header-icon-wrapper a:hover .img-basket path {
+  stroke: #fff;
+  fill: none;
+}
+
+.enter-btn {
+  padding: 14px 27px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.navigation-a-shop svg {
+  margin-left: 7px;
+  transition: ease 0.3s;
+}
+
+.first-page-image {
+  position: relative;
+}
+.first-page-image img {
+  position: absolute;
+  max-width: 1440px;
+  z-index: 0;
+}
+.first-page-offer {
+  max-width: 1137px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 18em;
+  margin-bottom: 18em;
+}
+.first-page-offer .h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.first-page-offer .h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.first-page-offer .h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.first-page-offer-a {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 17px 33px 17px 24px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+.first-page-offer-a svg {
+  margin-left: 14px;
+}
+.first-page-offer-a:hover {
+  background-color: #fff;
+  color: #000;
+  transition: ease 0.3s;
+}
+.first-page-offer-a:hover svg path {
+  stroke: #000;
+  transition: ease 0.3s;
+}
+
+.cat {
+  position: relative;
+  width: 1137px;
+  margin: 0 auto;
+}
+.cat-wrapper {
+  justify-content: space-between;
+  margin-top: 105px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.cat-wrapper .slider {
+  column-gap: 20px;
+}
+.cat-wrapper .slider svg {
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.cat-wrapper .slider svg:hover rect {
+  fill: #000;
+  transition: ease 0.3s;
+}
+.cat-wrapper .slider svg:hover path {
+  stroke: #fff;
+  transition: ease 0.3s;
+}
+.cat-slider {
+  max-width: 1137px;
+  column-gap: 30px;
+}
+.cat-slider .slider-item {
+  width: 23%;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+.cat-slider .slider-item p {
+  position: absolute;
+  left: 36px;
+  z-index: 0;
+  font-size: 66px;
+  letter-spacing: 7px;
+  font-weight: bold;
+  color: #e8e8e8;
+}
+.cat-slider .slider-item a {
+  padding: 14px 0px;
+  background-color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 0 21px 16px;
+  display: block;
+  text-align: center;
+  transition: ease 0.3s;
+}
+.cat-slider .slider-item a:hover {
+  background: #000;
+  color: #fff;
+  transition: ease 0.3s;
+}
+.cat-slider .slider-item .bgr {
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */

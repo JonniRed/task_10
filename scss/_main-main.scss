@@ -1,0 +1,57 @@
+.first-page {
+  &-image {
+    position: relative;
+
+    & img {
+      position: absolute;
+      max-width: 1440px;
+      z-index: 0;
+    }
+  }
+  &-offer {
+    max-width: 1137px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 18em;
+    margin-bottom: 18em;
+
+    & .h1 {
+      font-size: 60px;
+      font-weight: 700;
+    }
+    & .h2 {
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    & .h3 {
+      font-size: 30px;
+      font-weight: 400;
+    }
+    &-a {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 17px 33px 17px 24px;
+      color: #fff;
+      background-color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: ease 0.3s;
+
+      & svg {
+        margin-left: 14px;
+      }
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        transition: ease 0.3s;
+
+        & svg path {
+          stroke: #000;
+          transition: ease 0.3s;
+        }
+      }
+    }
+  }
+}
