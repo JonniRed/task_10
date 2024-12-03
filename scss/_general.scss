@@ -15,6 +15,7 @@ body {
 }
 .container {
   max-width: 1440px;
+  position: relative;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -79,6 +80,28 @@ h2 {
     &:hover path {
       stroke: #fff;
       transition: ease 0.3s;
+    }
+  }
+}
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 120px;
+  left: 65px;
+
+  & li {
+    list-style-type: none;
+    margin-bottom: 20px;
+
+    & a svg {
+      width: 35px;
+    }
+
+    & a[disabled] {
+      cursor: not-allowed;
+    }
+    & a[disabled] svg path {
+      fill: #d9d9d9;
     }
   }
 }

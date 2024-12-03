@@ -2,6 +2,10 @@
   width: 1440px;
   background-color: #000;
   color: #fff;
+
+  & .logo {
+    margin-bottom: 30px;
+  }
 }
 .info {
   width: 1137px;
@@ -35,9 +39,6 @@
   }
 }
 
-.logo {
-  margin-bottom: 30px;
-}
 .contact-li {
   display: flex;
   margin-bottom: 20px;

@@ -3,6 +3,9 @@
   background-color: #000;
   color: #fff;
 }
+.footer .logo {
+  margin-bottom: 30px;
+}
 
 .info {
   width: 1137px;
@@ -33,10 +36,6 @@
 .service a {
   color: #fff;
   font-style: normal;
-}
-
-.logo {
-  margin-bottom: 30px;
 }
 
 .contact-li {
@@ -121,6 +120,7 @@ body {
 
 .container {
   max-width: 1440px;
+  position: relative;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -189,6 +189,26 @@ h2 {
 .slider svg:hover path {
   stroke: #fff;
   transition: ease 0.3s;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 120px;
+  left: 65px;
+}
+.sidebar li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+.sidebar li a svg {
+  width: 35px;
+}
+.sidebar li a[disabled] {
+  cursor: not-allowed;
+}
+.sidebar li a[disabled] svg path {
+  fill: #d9d9d9;
 }
 
 .header {
