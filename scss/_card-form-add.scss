@@ -1,0 +1,232 @@
+.card-add-main {
+  margin: 100px auto;
+
+  & h2 {
+    margin-bottom: 50px;
+  }
+}
+.main-container {
+  width: 1137px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.add-photo {
+  width: 45%;
+  flex-direction: column;
+
+  & img {
+    width: 45%;
+    margin-bottom: 50px;
+  }
+
+  & .add {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  & .label {
+    padding: 17px 180px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+.desc {
+  width: 47%;
+
+  &-li {
+    list-style-type: none;
+    margin-bottom: 30px;
+
+    & p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    & input {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      border: solid 0.5px;
+      font-size: 16px;
+      transition: ease 0.3s;
+      padding-left: 15px;
+      box-sizing: border-box;
+
+      &:hover,
+      &:focus,
+      &:target {
+        background-color: #ededed;
+        border: solid 0.5px transparent;
+        transition: ease 0.3s;
+        outline: none;
+      }
+    }
+  }
+  .description-title {
+    font-weight: 700;
+  }
+  & select {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    outline: none;
+    border: solid 0.5px #000;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border: solid 0.5px transparent;
+      background-color: #ededed;
+    }
+  }
+  #id {
+    width: 50px;
+    border: none;
+    background-color: #ededed;
+  }
+}
+
+.price-li {
+  column-gap: 20px;
+
+  & select {
+    width: 90px;
+    height: 50px;
+  }
+  & label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  & .full-price input {
+    text-decoration: line-through;
+    color: #878585;
+  }
+}
+#description {
+  width: 500px;
+  height: 164px;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px 15px;
+  resize: none;
+}
+.checkbox-wrap {
+  flex-direction: column;
+  height: 261px;
+  flex-wrap: wrap;
+
+  & div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  & label {
+    user-select: none;
+    display: inline-flex;
+    line-height: 32px;
+  }
+
+  & #red::before {
+    background-color: red;
+  }
+  & #green::before {
+    background-color: #438e27;
+  }
+  & #white::before {
+    background-color: #fff;
+    border: solid 0.5px #000;
+  }
+  & #pink::before {
+    background-color: #ff49f3;
+  }
+  & #orange::before {
+    background-color: #ff6a00;
+  }
+  & #yellow::before {
+    background-color: #ffee33;
+  }
+  & #blue::before {
+    background-color: #173ac9;
+  }
+  & #black::before {
+    background-color: #000;
+  }
+  & #light-blue::before {
+    background-color: #75c9fd;
+  }
+  & #light-green::before {
+    background-color: #89f049;
+  }
+
+  & input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+  }
+  & input + label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: solid 0.5px transparent;
+    border-radius: 10px;
+  }
+  & input:checked + label::before {
+    content: url("../image/general/checked.svg");
+  }
+  & input:checked + #black::before {
+    content: url("../image/general/checked-white.svg");
+  }
+}
+.size {
+  column-gap: 20px;
+
+  // & div {
+  // }
+  & label {
+    user-select: none;
+    display: inline-flex;
+    line-height: 35px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border: solid 0.5px #000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2px 3px 1px;
+    transition: ease 0.3s;
+  }
+
+  & input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+  }
+
+  & input:checked + label {
+    content: "";
+    background-color: #000;
+    color: #fff;
+    transition: ease 0.3s;
+  }
+}
+.add-item-btn {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 16px;
+  font-family: "Jost";
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 30px;
+}

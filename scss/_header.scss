@@ -1,8 +1,9 @@
 .header {
   flex-direction: row;
   justify-content: space-between;
-  margin: 28px 100px;
+  margin: 28px auto;
   align-items: center;
+  width: 1137px;
 }
 .navigation {
   column-gap: 14px;

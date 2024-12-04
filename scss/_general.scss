@@ -58,7 +58,13 @@ a {
 .mail,
 .cards,
 .underline,
-.sprite {
+.sprite,
+.main-container,
+.add-photo,
+.price-li,
+.checkbox-wrap,
+.size,
+.breadcrumbs {
   display: flex;
 }
 h2 {
@@ -84,10 +90,11 @@ h2 {
   }
 }
 .sidebar {
-  display: none;
+  // display: none;
   position: fixed;
   top: 120px;
-  left: 65px;
+  left: 10px;
+  z-index: 5;
 
   & li {
     list-style-type: none;
@@ -102,6 +109,19 @@ h2 {
     }
     & a[disabled] svg path {
       fill: #d9d9d9;
+    }
+  }
+}
+.breadcrumbs {
+  margin-bottom: 30px;
+
+  & li {
+    list-style-type: none;
+
+    & a svg {
+      margin-left: 5px;
+      margin-right: 10px;
+      transform: rotate(-90deg);
     }
   }
 }
