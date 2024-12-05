@@ -54,51 +54,7 @@
     }
   }
 }
-.seller {
-  margin: 150px auto;
-  text-align: center;
 
-  & .h2 {
-    margin-bottom: 50px;
-  }
-  &-wrapper {
-    max-width: 1137px;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  &-item {
-    width: 23%;
-    text-align: left;
-  }
-
-  &-img-wrapper {
-    position: relative;
-    background-color: #f3f3f3;
-    height: 327px;
-  }
-  & .add-btn {
-    position: absolute;
-    bottom: 17px;
-    padding: 14px 68px;
-    left: 23px;
-    border-radius: 10px;
-    background: #fff;
-    outline: none;
-    border: none;
-  }
-
-  &-desc {
-    margin-top: 22px;
-  }
-
-  &-discount {
-    display: inline-block;
-    margin-left: 10px;
-    text-decoration: line-through;
-    color: #d0ced3;
-  }
-}
 .promo {
   max-width: 1137px;
   margin: 0 auto;
