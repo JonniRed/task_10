@@ -7,8 +7,10 @@
 }
 .main-container {
   width: 1137px;
-  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
   justify-content: space-between;
+  height: 100%;
 }
 .add-photo {
   width: 45%;
@@ -30,6 +32,7 @@
     padding: 17px 180px;
     background-color: #000;
     color: #fff;
+    margin-top: 100px;
     border-radius: 10px;
     text-align: center;
   }
@@ -70,10 +73,19 @@
     font-weight: 700;
   }
 }
-#id {
+#category option,
+#category {
+  text-transform: capitalize;
+}
+#id-p {
   width: 50px;
-  border: none;
+  height: 50px;
+  border-radius: 10px;
   background-color: #ededed;
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .price-li {
@@ -101,6 +113,10 @@
   outline: none;
   padding: 10px 15px;
   resize: none;
+}
+.upload {
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .checkbox-wrap {
   flex-direction: column;

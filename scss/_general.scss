@@ -15,11 +15,20 @@ body {
 }
 .container {
   max-width: 1440px;
+  height: 100%;
   position: relative;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+}
+
+main {
+  width: 1440px;
+  margin: 0 auto;
   flex-grow: 1;
+}
+.main-wrapper {
+  width: 1137px;
 }
 footer {
   flex-grow: 0;
@@ -64,7 +73,10 @@ a {
 .price-li,
 .checkbox-wrap,
 .size,
-.breadcrumbs {
+.breadcrumbs,
+.count-wrapper,
+.add-cart-wrapper,
+.upload {
   display: flex;
 }
 h2 {
@@ -176,10 +188,10 @@ select {
   border-radius: 10px;
   margin-bottom: 30px;
   padding-left: 15px;
+
   box-sizing: border-box;
   outline: none;
   border: solid 0.5px #000;
-
   &:hover,
   &:focus {
     outline: none;

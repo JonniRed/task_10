@@ -1,0 +1,125 @@
+.main-container.card-page {
+  height: auto;
+}
+
+.card-page {
+  justify-content: space-between;
+
+  &-wrapper {
+    margin-right: 50px;
+
+    & .img {
+      width: 500px;
+      height: 500px;
+      margin-bottom: 30px;
+      background-color: #ededed;
+      border-radius: 10px;
+    }
+  }
+
+  &-img-multi {
+    display: flex;
+    justify-content: space-between;
+
+    & .img-small {
+      height: 150px;
+      width: 150px;
+      background-color: #ededed;
+      border-radius: 10px;
+    }
+  }
+}
+.card-page {
+  & .checkbox-wrap {
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: auto;
+
+    & div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    & label {
+      user-select: none;
+      display: inline-flex;
+      line-height: 32px;
+    }
+
+    & #red::before {
+      background-color: red;
+    }
+    & #green::before {
+      background-color: #438e27;
+    }
+    & #white::before {
+      background-color: #fff;
+      border: solid 0.5px #000;
+    }
+    & #pink::before {
+      background-color: #ff49f3;
+    }
+    & #orange::before {
+      background-color: #ff6a00;
+    }
+    & #yellow::before {
+      background-color: #ffee33;
+    }
+    & #blue::before {
+      background-color: #173ac9;
+    }
+    & #black::before {
+      background-color: #000;
+    }
+    & #light-blue::before {
+      background-color: #75c9fd;
+    }
+    & #light-green::before {
+      background-color: #89f049;
+    }
+
+    & label::before {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      border: solid 0.5px transparent;
+      border-radius: 10px;
+    }
+    & label p {
+      display: none;
+    }
+  }
+}
+.count-wrapper {
+  padding: 18px 20px;
+  column-gap: 20px;
+  align-items: center;
+  border: solid 0.5px #000;
+  border-radius: 10px;
+
+  & .count {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+}
+.add-cart-wrapper {
+  margin-top: 50px;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 56px;
+}
+.btn-cart {
+  background-color: #000;
+  color: #fff;
+  padding: 18px 0;
+  flex-grow: 1;
+  border-radius: 10px;
+}
+
+.favorite-div {
+  padding: 15px 16px;
+  border-radius: 10px;
+  border: solid 0.5px #000;
+}

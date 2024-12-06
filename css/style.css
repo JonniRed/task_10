@@ -7,8 +7,10 @@
 
 .main-container {
   width: 1137px;
-  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
   justify-content: space-between;
+  height: 100%;
 }
 
 .add-photo {
@@ -30,6 +32,7 @@
   padding: 17px 180px;
   background-color: #000;
   color: #fff;
+  margin-top: 100px;
   border-radius: 10px;
   text-align: center;
 }
@@ -65,10 +68,20 @@
   font-weight: 700;
 }
 
-#id {
+#category option,
+#category {
+  text-transform: capitalize;
+}
+
+#id-p {
   width: 50px;
-  border: none;
+  height: 50px;
+  border-radius: 10px;
   background-color: #ededed;
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .price-li {
@@ -95,6 +108,11 @@
   outline: none;
   padding: 10px 15px;
   resize: none;
+}
+
+.upload {
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .checkbox-wrap {
@@ -201,6 +219,126 @@
   color: #fff;
   border-radius: 10px;
   margin-top: 30px;
+}
+
+.main-container.card-page {
+  height: auto;
+}
+
+.card-page {
+  justify-content: space-between;
+}
+.card-page-wrapper {
+  margin-right: 50px;
+}
+.card-page-wrapper .img {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 30px;
+  background-color: #ededed;
+  border-radius: 10px;
+}
+.card-page-img-multi {
+  display: flex;
+  justify-content: space-between;
+}
+.card-page-img-multi .img-small {
+  height: 150px;
+  width: 150px;
+  background-color: #ededed;
+  border-radius: 10px;
+}
+
+.card-page .checkbox-wrap {
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: auto;
+}
+.card-page .checkbox-wrap div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.card-page .checkbox-wrap label {
+  user-select: none;
+  display: inline-flex;
+  line-height: 32px;
+}
+.card-page .checkbox-wrap #red::before {
+  background-color: red;
+}
+.card-page .checkbox-wrap #green::before {
+  background-color: #438e27;
+}
+.card-page .checkbox-wrap #white::before {
+  background-color: #fff;
+  border: solid 0.5px #000;
+}
+.card-page .checkbox-wrap #pink::before {
+  background-color: #ff49f3;
+}
+.card-page .checkbox-wrap #orange::before {
+  background-color: #ff6a00;
+}
+.card-page .checkbox-wrap #yellow::before {
+  background-color: #ffee33;
+}
+.card-page .checkbox-wrap #blue::before {
+  background-color: #173ac9;
+}
+.card-page .checkbox-wrap #black::before {
+  background-color: #000;
+}
+.card-page .checkbox-wrap #light-blue::before {
+  background-color: #75c9fd;
+}
+.card-page .checkbox-wrap #light-green::before {
+  background-color: #89f049;
+}
+.card-page .checkbox-wrap label::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: solid 0.5px transparent;
+  border-radius: 10px;
+}
+.card-page .checkbox-wrap label p {
+  display: none;
+}
+
+.count-wrapper {
+  padding: 18px 20px;
+  column-gap: 20px;
+  align-items: center;
+  border: solid 0.5px #000;
+  border-radius: 10px;
+}
+.count-wrapper .count {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.add-cart-wrapper {
+  margin-top: 50px;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 56px;
+}
+
+.btn-cart {
+  background-color: #000;
+  color: #fff;
+  padding: 18px 0;
+  flex-grow: 1;
+  border-radius: 10px;
+}
+
+.favorite-div {
+  padding: 15px 16px;
+  border-radius: 10px;
+  border: solid 0.5px #000;
 }
 
 .main-catalog {
@@ -372,11 +510,21 @@ body {
 
 .container {
   max-width: 1440px;
+  height: 100%;
   position: relative;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+}
+
+main {
+  width: 1440px;
+  margin: 0 auto;
   flex-grow: 1;
+}
+
+.main-wrapper {
+  width: 1137px;
 }
 
 footer {
@@ -424,7 +572,10 @@ a {
 .price-li,
 .checkbox-wrap,
 .size,
-.breadcrumbs {
+.breadcrumbs,
+.count-wrapper,
+.add-cart-wrapper,
+.upload {
   display: flex;
 }
 
@@ -543,7 +694,7 @@ select:hover, select:focus {
   justify-content: space-between;
   margin: 28px auto;
   align-items: center;
-  width: 1137px;
+  width: 1240px;
 }
 
 .navigation {

@@ -112,7 +112,7 @@
         <button class="enter-btn">Profile</button>
       </div>
     </header>
-    <main class="main card-add-main">
+    <main class="main main-wrapper new-product">
       <ul class="breadcrumbs">
         <li><a href="../index.html">Home <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7"
               viewBox="0 0 12 7" fill="none">
@@ -122,35 +122,33 @@
         <li><a href="#">Add a new item </a></li>
       </ul>
       <h2 class="h2 h2-card-add">Add a new card</h2>
-      <div class="main-container">
+      <div class="main-container ">
         <div class="add-photo">
-          <img src="../image/general/Bgc-card.svg" alt="Пустое фото" id="add">
+          <div class="upload">
+
+          </div>
           <label for="addPhotos" class="label">Add photos
-            <input type="file" class="add" id="addPhotos" name="addPhotos" multiple></label>
+            <input type="file" class="add" id="addPhotos" name="addPhotos" multiple>
+          </label>
         </div>
         <form class="desc">
           <ul class="description">
-            <li class="desc-li">
+            <li class="desc-li id-container">
               <p class="description-title">Id</p>
-              <input type="text" disabled id="id">
             </li>
             <li class="desc-li">
               <p class="description-title">Category</p>
               <select name="category" id="category">
                 <option value="null">--Category--</option>
-                <option value="casual">Casual</option>
-                <option value="western">Western</option>
-                <option value="ethnic">Ethnic</Option>
-                <option value="kids">Kids</option>
               </select>
             </li>
             <li class="desc-li">
               <p class="description-title">Title card</p>
-              <input type="text">
+              <input type="text" id="title-card">
             </li>
             <li class="desc-li">
               <p class="description-title">Short Description</p>
-              <input type="text">
+              <input type="text" id="short-desc">
             </li>
             <li class="desc-li">
               <p class="description-title">Review/Rating</p>
@@ -170,11 +168,11 @@
               </div>
               <div class="discount">
                 <p class="description-title">Discount Price</p>
-                <input type="text">
+                <input type="text" id="discount">
               </div>
               <div class="full-price">
                 <p class="description-title">Full price</p>
-                <input type="text">
+                <input type="text" id="full-price">
               </div>
             </li>
             <li class="desc-li">
@@ -185,7 +183,7 @@
               <p class="description-title">Color</p>
               <div class="checkbox-wrap">
                 <div>
-                  <input type="checkbox" id="red-i">
+                  <input type="checkbox" id="red-i" accept=".jpg, .jpeg">
                   <label for="red-i" id="red">
                     Red
                   </label>
