@@ -18,10 +18,23 @@
   & .seller-item {
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 30%;
+    border: solid 0.5px #ededed;
+    padding: 7px;
+    box-sizing: border-box;
 
     & .seller-img-wrapper {
       flex-direction: column;
+      justify-content: center;
+
+      & a {
+        max-width: 263px;
+        overflow: hidden;
+      }
+      & a img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     & button {
@@ -31,18 +44,27 @@
       left: 23px;
       border-radius: 10px;
       background: #fff;
+      transition: ease 0.3s;
       outline: none;
-      border: none;
+      border: solid 0.5px #ededed;
 
       &:hover {
         background: #000;
         color: #fff;
         transition: ease 0.3s;
+        border: solid 0.5px transparent;
       }
+    }
+
+    & .seller-desc {
+      font-size: 14px;
     }
   }
 }
 .category-select {
   border: solid 0.5px transparent;
   margin-right: 30px;
+}
+.id-dis {
+  display: none;
 }

@@ -1,4 +1,12 @@
-import { id, arr } from "./variable.js";
+import {
+  idInput,
+  arr,
+  // countId,
+  category,
+  title,
+  fullPrice,
+  description,
+} from "./variable.js";
 
 export async function setNewId() {
   fetch("https://fakestoreapi.com/products")
@@ -6,7 +14,7 @@ export async function setNewId() {
     .then((json) => {
       const inputId = document.createElement("p");
       (inputId.id = "id-p"), (inputId.innerText = `${json.length + 1}`);
-      id.append(inputId);
+      idInput.append(inputId);
     });
 }
 
@@ -24,38 +32,13 @@ export function getCategory(select) {
     });
 }
 
-function Product(
-  id,
-  title,
-  discountPrice,
-  fullPrice,
-  description,
-  shortDesc,
-  category
-) {
-  this.id = id;
-  this.title = title;
-  this.discountPrice = discountPrice;
-  this.fullPrice = fullPrice;
-  this.description = description;
-  (this.shortDesc = shortDesc), (this.category = category);
-}
 export function setNewProduct() {
-  const countId = document.querySelector("#id-p");
-  const category = document.querySelector("#category");
-  const title = document.querySelector("#title-card");
-  const discountPrice = document.querySelector("#discount");
-  const fullPrice = document.querySelector("#full-price");
-  const shortDesc = document.querySelector("#short-desc");
-  const description = document.querySelector("#description");
-  const newProduct = new Product(
-    countId.textContent,
-    title.value,
-    discountPrice.value,
-    fullPrice.value,
-    description.value,
-    shortDesc.value,
-    category.value
-  );
-  return newProduct;
+  const product = {
+    title: title.value,
+    price: fullPrice.value,
+    description: description.value,
+    category: category.value,
+  };
+  console.log(product);
+  return product;
 }

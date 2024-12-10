@@ -103,11 +103,13 @@
 
 #description {
   width: 500px;
-  height: 164px;
+  height: auto;
   border-radius: 10px;
   outline: none;
-  padding: 10px 15px;
   resize: none;
+}
+#description::first-letter {
+  text-transform: uppercase;
 }
 
 .upload {
@@ -235,8 +237,13 @@
   width: 500px;
   height: 500px;
   margin-bottom: 30px;
-  background-color: #ededed;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
+}
+.card-page-wrapper .img img {
+  width: 100%;
+  max-height: 100%;
 }
 .card-page-img-multi {
   display: flex;
@@ -362,10 +369,22 @@
 .product-list .seller-item {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 30%;
+  border: solid 0.5px #ededed;
+  padding: 7px;
+  box-sizing: border-box;
 }
 .product-list .seller-item .seller-img-wrapper {
   flex-direction: column;
+  justify-content: center;
+}
+.product-list .seller-item .seller-img-wrapper a {
+  max-width: 263px;
+  overflow: hidden;
+}
+.product-list .seller-item .seller-img-wrapper a img {
+  width: 100%;
+  height: 100%;
 }
 .product-list .seller-item button {
   position: absolute;
@@ -374,18 +393,27 @@
   left: 23px;
   border-radius: 10px;
   background: #fff;
+  transition: ease 0.3s;
   outline: none;
-  border: none;
+  border: solid 0.5px #ededed;
 }
 .product-list .seller-item button:hover {
   background: #000;
   color: #fff;
   transition: ease 0.3s;
+  border: solid 0.5px transparent;
+}
+.product-list .seller-item .seller-desc {
+  font-size: 14px;
 }
 
 .category-select {
   border: solid 0.5px transparent;
   margin-right: 30px;
+}
+
+.id-dis {
+  display: none;
 }
 
 .footer {
@@ -615,6 +643,7 @@ h2 {
 }
 .sidebar li a[disabled] {
   cursor: not-allowed;
+  pointer-events: none;
 }
 .sidebar li a[disabled] svg path {
   fill: #d9d9d9;
@@ -650,7 +679,6 @@ h2 {
 }
 .seller-img-wrapper {
   position: relative;
-  background-color: #f3f3f3;
   height: 327px;
 }
 .seller .add-btn {

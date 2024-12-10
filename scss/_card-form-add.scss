@@ -108,11 +108,14 @@
 }
 #description {
   width: 500px;
-  height: 164px;
+  height: auto;
   border-radius: 10px;
   outline: none;
-  padding: 10px 15px;
   resize: none;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 .upload {
   justify-content: space-between;
