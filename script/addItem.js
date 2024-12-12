@@ -1,25 +1,23 @@
 import {
   idInput,
   arr,
-  // countId,
-  category,
+  selectCategory,
   title,
   fullPrice,
   description,
+  btnSaveItem,
 } from "./variable.js";
 
-export async function setNewId() {
+export function setNewId() {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((json) => {
-      const inputId = document.createElement("p");
-      (inputId.id = "id-p"), (inputId.innerText = `${json.length + 1}`);
-      idInput.append(inputId);
+      return (idInput.innerText = `${json.length + 1}`);
     });
 }
 
 export function getCategory(select) {
-  fetch("https://fakestoreapi.com/products")
+  return fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((json) => {
       json.forEach((element) => {
@@ -32,13 +30,35 @@ export function getCategory(select) {
     });
 }
 
-export function setNewProduct() {
+function setNewProduct() {
   const product = {
+    id: idInput.textContent,
     title: title.value,
     price: fullPrice.value,
     description: description.value,
-    category: category.value,
+    category: selectCategory.value,
   };
-  console.log(product);
   return product;
+}
+
+export function creareProduct() {
+  setNewId();
+
+  btnSaveItem.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const newPr = setNewProduct();
+
+    try {
+      fetch("https://fakestoreapi.com/products", {
+        method: "POST",
+        body: JSON.stringify(newPr),
+      });
+      alert("Data sent to server successfully!");
+      window.location.href = "../index.html";
+    } catch (error) {
+      alert("Sorry...!");
+    }
+  });
+  return;
 }

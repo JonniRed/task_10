@@ -17,7 +17,7 @@
   <div class="container">
     <aside class="sidebar">
       <ul class="sidebar-ul">
-        <li class="sidebar-li add"><a href="./card-form.html" title="Добавить товар">
+        <li class="sidebar-li"><a href="./card-form.html" title="Добавить товар" id="add">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
               <g clip-path="url(#clip0_114671_1814)">
                 <path
@@ -37,7 +37,7 @@
               </defs>
             </svg></a>
         </li>
-        <li class="sidebar-li edit"><a href="./card-form.html" disabled title="Редактировать описание">
+        <li class="sidebar-li"><a href="./card-form.html" disabled title="Редактировать описание" id="edit">
             <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
               <path
                 d="M32.1057 5.28788C32.1057 5.28788 32.3154 5.07827 34.8602 7.62299C37.4057 10.1688 37.1961 10.3784 37.1961 10.3784L14.8256 32.749C14.8256 32.749 15.0355 32.5394 12.4897 29.9937C9.94385 27.4486 9.73438 27.6582 9.73438 27.6582L32.1057 5.28788Z"
@@ -53,7 +53,7 @@
                 fill="black" />
             </svg></a>
         </li>
-        <li class="sidebar-li delete"><a href="./index.html" disabled title="Удалить товар"><svg
+        <li class="sidebar-li"><a href="../index.html" disabled title="Удалить товар" id="delete"><svg
               xmlns="http://www.w3.org/2000/svg" width="38" height="40" viewBox="0 0 38 40" fill="none">
               <path
                 d="M34.7145 5.04508H26.1751C25.6313 2.19652 22.7213 0 19.1497 0C15.5781 0 12.612 2.19652 12.1242 5.04508H3.70824C2.071 5.04508 0.742188 6.14566 0.742188 7.49132V9.98843C0.742188 11.237 1.82995 12.2358 3.28774 12.3838V36.7538C3.28774 38.5526 5.04269 40 7.22378 40H31.2606C33.4417 40 35.1966 38.5526 35.1966 36.7538V12.4301C36.6488 12.2312 37.7422 11.2324 37.7422 10.0347V7.53759C37.6805 6.14566 36.3461 5.04508 34.7145 5.04508ZM19.1497 1.84971C21.5102 1.84971 23.4502 3.20002 23.8707 5.04508H14.3669C14.8492 3.24624 16.7891 1.84971 19.1497 1.84971ZM32.8978 36.8093C32.8978 37.5584 32.1689 38.2058 31.2045 38.2058H7.16211C6.2538 38.2058 5.46883 37.6047 5.46883 36.8093V12.4855H32.8418V36.8093H32.8978ZM35.4378 9.98843C35.4378 10.3399 35.135 10.5896 34.7088 10.5896H3.70261C3.27647 10.5896 2.97368 10.3399 2.97368 9.98843V7.49132C2.97368 7.13987 3.27647 6.89014 3.70261 6.89014H34.6472C35.0733 6.89014 35.376 7.13987 35.376 7.49132V9.98843H35.4378ZM10.4926 33.4104V17.6324C10.4926 17.133 10.9747 16.7353 11.5803 16.7353C12.1859 16.7353 12.6681 17.1329 12.6681 17.6324V33.4104C12.6681 33.9098 12.1859 34.3076 11.5803 34.3076C10.9748 34.363 10.4926 33.9098 10.4926 33.4104ZM18.1797 33.4104V17.6324C18.1797 17.133 18.6619 16.7353 19.2675 16.7353C19.873 16.7353 20.3552 17.1329 20.3552 17.6324V33.4104C20.3552 33.9098 19.873 34.3076 19.2675 34.3076C18.6674 34.363 18.1797 33.9098 18.1797 33.4104ZM25.8723 33.4104V17.6324C25.8723 17.133 26.3545 16.7353 26.9601 16.7353C27.5657 16.7353 28.0478 17.1329 28.0478 17.6324V33.4104C28.0478 33.9098 27.5657 34.3076 26.9601 34.3076C26.4162 34.363 25.8723 33.9098 25.8723 33.4104Z"
@@ -119,13 +119,12 @@
               <path d="M1 1.5L6 5.5L11 1.5" stroke="#000" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round"></path>
             </svg></a></li>
-        <li><a href="#">Add a new item </a></li>
+        <li><a href="#" class="edit-card">Add a new item </a></li>
       </ul>
       <h2 class="h2 h2-card-add">Add a new card</h2>
       <div class="main-container ">
         <div class="add-photo">
           <div class="upload">
-
           </div>
           <label for="addPhotos" class="label">Add photos
             <input type="file" class="add" id="addPhotos" name="addPhotos" multiple>
@@ -135,6 +134,7 @@
           <ul class="description">
             <li class="desc-li id-container">
               <p class="description-title">Id</p>
+              <p id="id-p"></p>
             </li>
             <li class="desc-li">
               <p class="description-title">Category</p>

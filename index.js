@@ -1,42 +1,42 @@
 import {
   productList,
   selectCategory,
+  createProductBtn,
+  editProductBtn,
+  deleteProductBtn,
   enterBtn,
-  sidebar,
 } from "./script/variable.js";
-import { setNewId, getCategory, setNewProduct } from "./script/addItem.js";
+import { creareProduct, getCategory } from "./script/addItem.js";
 import { createCard, setCatalogItem } from "./script/setItemList.js";
+import { editItem, deleteItem } from "./script/editItem.js";
 import { setItemProperty } from "./script/setItemProperty.js";
-import { sidebarClick } from "./script/sidebarScript.js";
+import { setAdminState, removeAdminState } from "./script/--helper.js";
 
-if (document.querySelector(".new-product")) {
-  setNewId();
-  getCategory(selectCategory);
+enterBtn.onclick = (e) => {
+  e.preventDefault();
+  localStorage.getItem("user") ? removeAdminState() : setAdminState();
+};
 
-  const btnCreateItem = document.querySelector(".add-item-btn");
-  btnCreateItem.addEventListener("click", (e) => {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  localStorage.getItem("user") ? setAdminState() : removeAdminState();
+  selectCategory ? getCategory(selectCategory) : false;
+});
 
-    const newPr = setNewProduct();
-    console.log(newPr);
-    try {
-      fetch("https://fakestoreapi.com/products", {
-        method: "POST",
-        body: JSON.stringify(newPr),
-      });
-      alert("Data sent to server successfully!");
-      window.location.href = "../index.html";
-    } catch (error) {
-      alert("Sorry...!");
-    }
-  });
+if (
+  window.location.toString().indexOf("pages/card-form.html") > 0 &&
+  !localStorage.getItem("id")
+) {
+  creareProduct();
+} else if (
+  window.location.toString().indexOf("pages/card-form.html") > 0 &&
+  localStorage.getItem("id")
+) {
+  const id = Number(localStorage.getItem("id"));
+
+  editProductBtn.addEventListener("click", editItem(id));
 }
 
-if (document.querySelector(".main-catalog")) {
-  const categoryList = document.querySelector("#category-select");
-
-  getCategory(categoryList);
-
+if (window.location.toString().indexOf("pages/catalog.html") > 0) {
   try {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -45,18 +45,26 @@ if (document.querySelector(".main-catalog")) {
           createCard(item.id, item.image, item.title, item.price);
         });
       });
+  } catch (e) {
+    alert("Upload fail");
+  }
 
-    categoryList.addEventListener("change", () => {
-      setCatalogItem(categoryList.value);
+  try {
+    selectCategory.addEventListener("change", () => {
+      setCatalogItem(selectCategory.value);
     });
+  } catch (e) {
+    alert("Category upload fail");
+  }
 
+  try {
     productList.addEventListener("click", (e) => {
       // e.preventDefault();
       const currentTarget = e.target;
       let cardId =
         currentTarget.closest(".seller-item")?.querySelector(".id-dis")["id"] ||
         false;
-      localStorage.removeItem("id");
+
       localStorage.setItem("id", cardId);
 
       window.location.href = "./card-page.html";
@@ -66,60 +74,22 @@ if (document.querySelector(".main-catalog")) {
   }
 }
 
-if (document.querySelector("#cardPage")) {
-  let cardId = Number(localStorage.getItem("id"));
-  console.log(cardId);
+if (window.location.toString().indexOf("pages/card-page.html") > 0) {
+  createProductBtn.setAttribute("disabled", ""),
+    editProductBtn.removeAttribute("disabled"),
+    deleteProductBtn.removeAttribute("disabled");
+
+  let id = Number(localStorage.getItem("id"));
 
   try {
-    fetch(`https://fakestoreapi.com/products/${cardId}`)
+    await fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => res.json())
       .then((json) => {
         setItemProperty(json);
       });
   } catch (e) {
-    alert("Oops...");
+    alert("Product cannot be load...");
   }
-}
 
-enterBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (enterBtn.hasAttribute("admin")) {
-    enterBtn.removeAttribute("admin"),
-      (enterBtn.textContent = "Profile"),
-      (sidebar.style.display = "none"),
-      localStorage.removeItem("user");
-  } else {
-    enterBtn.setAttribute("admin", ""),
-      (enterBtn.textContent = "Admin"),
-      (sidebar.style.display = "block"),
-      localStorage.setItem("user", "admin");
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("user")) {
-    enterBtn.setAttribute("admin", ""),
-      (enterBtn.textContent = "Admin"),
-      (sidebar.style.display = "block");
-  } else {
-    sidebar.style.display = "none";
-  }
-});
-
-sidebar.addEventListener("click", (e) => {
-  const btn = e.target.closest(".sidebar-li");
-  const btnFunc = sidebarClick();
-
-  btn.classList.contains("add") && btnFunc.add();
-  btn.classList.contains("edit") && btnFunc.edit();
-  btn.classList.contains("delete") && btnFunc.delete();
-});
-
-if (document.querySelector("#card-item")) {
-  const arrayBtn = sidebar.querySelectorAll(".sidebar-li > a");
-  for (const item of arrayBtn) {
-    item.style.pointerEvents = "all";
-    item.removeAttribute("disabled");
-  }
+  deleteProductBtn.addEventListener("click", () => deleteItem(id));
 }

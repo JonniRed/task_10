@@ -115,6 +115,14 @@
 .upload {
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 500px;
+  height: auto;
+}
+.upload img {
+  max-width: 100%;
+  margin-bottom: 50px;
+  max-height: 100%;
+  width: auto;
 }
 
 .checkbox-wrap {
@@ -239,10 +247,11 @@
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 10px;
 }
 .card-page-wrapper .img img {
-  width: 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 .card-page-img-multi {
@@ -346,10 +355,6 @@
   padding: 15px 16px;
   border-radius: 10px;
   border: solid 0.5px #000;
-}
-
-.main-catalog {
-  justify-content: space-between;
 }
 
 .category-select {
@@ -642,6 +647,7 @@ h2 {
   width: 35px;
 }
 .sidebar li a[disabled] {
+  display: block;
   cursor: not-allowed;
   pointer-events: none;
 }

@@ -120,6 +120,15 @@
 .upload {
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 500px;
+  height: auto;
+
+  & img {
+    max-width: 100%;
+    margin-bottom: 50px;
+    max-height: 100%;
+    width: auto;
+  }
 }
 .checkbox-wrap {
   flex-direction: column;
